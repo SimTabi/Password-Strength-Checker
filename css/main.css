@@ -1,0 +1,23 @@
+      body {
+        font-family: monospace;
+      }
+
+      .match-sequence table {
+        display: inline;
+        margin-right: 30px;
+      }
+
+      .match-sequence {
+        margin-bottom: 100px;
+      }
+
+      .match-sequence > table:nth-child(odd) {
+        background-color: #ccc;
+      }
+      .match-sequence > table:nth-child(even) {
+        background-color: #eee;
+      }
+
+      #examples-container {
+        margin-top: 200px;
+      }
