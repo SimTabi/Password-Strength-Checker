@@ -17,7 +17,13 @@
       .match-sequence > table:nth-child(even) {
         background-color: #eee;
       }
-
-      #examples-container {
-        margin-top: 200px;
+      
+      .password_style {
+        height: 30px !important;
+        padding: 4px !important;
+        font-size: 19px !important;
+        text-align: center;
+      }
+      .center_div {
+        text-align: center;
       }

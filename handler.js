@@ -15,9 +15,9 @@
       last_q = '';
       _listener = function() {
         var current, results;
-        current = $('#search-bar').val();
+        current = $('#password_input').val();
         if (!current) {
-          $('#search-results').html('');
+          $('#password_results').html('');
           return;
         }
         if (current !== last_q) {
@@ -28,7 +28,7 @@
             results: [r]
           };
           rendered = Mustache.render(results_tmpl, results);
-          return $('#search-results').html(rendered);
+          return $('#password_results').html(rendered);
         }
       };
       return setInterval(_listener, 100);

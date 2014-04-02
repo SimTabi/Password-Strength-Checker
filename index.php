@@ -19,40 +19,16 @@
     <link rel="stylesheet" href="css/main.css" type="text/css" media="all">
 
   </head>
-  <body>
+  <body class="center_div">
 
-    <style type="text/css">
-
-      body {
-        font-family: monospace;
-      }
-
-      .match-sequence table {
-        display: inline;
-        margin-right: 30px;
-      }
-
-      .match-sequence {
-        margin-bottom: 100px;
-      }
-
-      .match-sequence > table:nth-child(odd) {
-        background-color: #ccc;
-      }
-      .match-sequence > table:nth-child(even) {
-        background-color: #eee;
-      }
-
-      #examples-container {
-        margin-top: 200px;
-      }
-
-    </style>
-	
     <h1>SPI Password Strength Checker</h1>
 
-    <input id="search-bar" type="text" size="50" />
-    <div id="search-results">
+
+    <div class="field">
+    <input class="password_style" type="text" name="password_input" id="password_input"/>
+    </div>
+
+    <div id="password_results">
     </div>
 
 
