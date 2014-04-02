@@ -1,18 +1,18 @@
 
 <html>
   <head>
-    <title>zxcvbn tests</title>
+    <title>Are your passwords strong enough?</title>
 
-    <!-- I used jquery, mustache, and a template file called handler.js for this page
+    <!-- I used jquery, mustache, and a javascript hook / handler for this page
     		 the zxcvbn-async.js calls the actual password checking script, but does it without blocking page load. -->
 
-    <script type="text/javascript" src="jquery.js">
+    <script type="text/javascript" src="js/jquery.js">
     </script>
-    <script type="text/javascript" src="mustache.js">
+    <script type="text/javascript" src="js/mustache.js">
     </script>
-    <script type="text/javascript" src="handler.js">
+    <script type="text/javascript" src="js/handler.js">
     </script>
-    <script type="text/javascript" src="zxcvbn-async.js">
+    <script type="text/javascript" src="js/zxcvbn-async.js">
     </script>
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css" media="all">
@@ -21,7 +21,7 @@
   </head>
   <body class="center_div">
 
-    <h1>SPI Password Strength Checker</h1>
+    <h1>Password Strength Checker</h1>
 
 
     <div class="field">
@@ -31,6 +31,6 @@
     <div id="password_results">
     </div>
 
-
+    <div class="field"><label for="advanced_breakdown">Advanced Breakdown</label> <input type="checkbox" id="advanced_option" value="1"></div>
   </body>
 </html>

@@ -11,13 +11,6 @@
         margin-bottom: 100px;
       }
 
-      .match-sequence > table:nth-child(odd) {
-        background-color: #ccc;
-      }
-      .match-sequence > table:nth-child(even) {
-        background-color: #eee;
-      }
-      
       .password_style {
         height: 30px !important;
         padding: 4px !important;
