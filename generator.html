@@ -15,7 +15,8 @@ function passGen() {
     xmlhttp.send();
     var wordlist = xmlhttp.responseText;
 
-    var output = "";
+    var exploded = "";
+    var condensed = "";
 
     // splits wordlist into an array for easier parsing
     var wordsplit = wordlist.split("\n");
@@ -33,17 +34,16 @@ function passGen() {
 
       for (index = 0; index < wordsplit.length; ++index) {
         if ( wordsplit[index].indexOf(dice) != -1 ) {
-          output = wordsplit[index] + "<br>" + output;
+          exploded = wordsplit[index].substr(5) + exploded;
+          condensed = wordsplit[index].substr(6) + condensed;
         }
       }  
       dice = "";
     }
-  $('#password_results').html(output);
+  $('#password_results').html(exploded + "<br>" + condensed);
 }
 
 </script>
-
-
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/main.css" type="text/css" media="all">
@@ -52,13 +52,14 @@ function passGen() {
   <body class="center_div">
   <h1>Secure Password Generator</h1>
 
-  <form class="navbar-form navbar-left">
+  <form class="navbar-form">
 
   <div class="form-group">
-    <input type="text" class="form-control password_style" id="password_length" placeholder="Number of characters">
+    <input type="text" class="form-control password_style" id="password_length" placeholder="Number of words">  
+    <button onclick="passGen(); return false;" class="btn btn-info"><i class="glyphicon glyphicon-random"><!----></i> Generate!</button>
   </div>
   <br>
-  <button onclick="passGen(); return false;" class="btn btn-info">Generate!</button>
+ 
   <br>
 
   <div id="password_results">
