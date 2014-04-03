@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<title>Secure Password Generator</title>
+
+	  <script type="text/javascript" src="js/jquery.js">
+    </script>
+
+<script type="text/javascript">
+
+function passGen() {
+
+    // puts the whole text into wordlist
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "wordlist.txt", false);
+    xmlhttp.send();
+    var wordlist = xmlhttp.responseText;
+
+    var output = "";
+
+    // splits wordlist into an array for easier parsing
+    var wordsplit = wordlist.split("\n");
+
+    // set up vars, grab the user length preference. the + makes it return the value as an integer, neat trick
+    var length = +$('#password_length').val();
+    var dice = "";
+
+    for (var x=0;x<length;x++) {
+      //this loop generates the roll
+      for (var i=0;i<5;i++) {	
+        roll = Math.floor((Math.random()*6)+1);
+        dice = dice + roll;
+      }
+
+      for (index = 0; index < wordsplit.length; ++index) {
+        if ( wordsplit[index].indexOf(dice) != -1 ) {
+          output = wordsplit[index] + "<br>" + output;
+        }
+      }  
+      dice = "";
+    }
+  $('#password_results').html(output);
+}
+
+</script>
+
+
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/main.css" type="text/css" media="all">
+  </head>
+
+  <body class="center_div">
+  <h1>Secure Password Generator</h1>
+
+  <form class="navbar-form navbar-left">
+
+  <div class="form-group">
+    <input type="text" class="form-control password_style" id="password_length" placeholder="Number of characters">
+  </div>
+  <br>
+  <button onclick="passGen(); return false;" class="btn btn-info">Generate!</button>
+  <br>
+
+  <div id="password_results">
+  </div>
+
+</form>
+</body>
+</html>
